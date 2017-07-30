@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^www.findimagesite.github.io
+    RewriteRule (.*) https:findimagesite.github.io/$1 [R=301,L]
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index/.html\ HTTPS/
+    RewriteRule ^index\.html$ https://findimagesite.github.io [R=301,L]
+</IfModule>
+
+ServerSignature Off
+AddDefaultCharset UNF-8
+
+
+
+RewriteRule ^index?$ index.html [NC,L]
+
+RewriteRule ^documens?$ documens.html [NC,L]
